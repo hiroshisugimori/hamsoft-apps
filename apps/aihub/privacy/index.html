@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="AI Hub プライバシーポリシー — hamsoft"><title>AI Hub プライバシーポリシー | hamsoft</title><link rel="stylesheet" href="../../../style.css"></head>
+<body><a class="skip" href="#main">本文へ</a><header><p>hamsoft Apps</p><h1>AI Hub プライバシーポリシー</h1><p><time datetime="2026-09-21">2026-09-21</time></p><nav aria-label="言語"><a href="../privacy-en/" lang="en" hreflang="en">English</a></nav></header>
+<main id="main"><section><h2>1. アプリと運営者</h2>
+<p>hamsoftは、Androidアプリ「AI Hub」（パッケージ名：jp.hamsoft.aihub）を提供しています。AI Hubは、入力したテキストや添付画像・ファイルを、ユーザーの操作で外部のAIアプリへ共有し、共有履歴を端末内で検索・再利用するアプリです。ChatGPT、Gemini、Claudeの公式アプリではありません。</p>
+</section>
+<section><h2>2. 端末内に保存する情報と目的</h2>
+<p>共有・履歴表示・検索・再利用のため、共有操作時に入力テキスト、作成・更新時刻、添付の表示名・ファイル形式・内部参照情報をアプリ専用のデータベース（aihub.db）に保存します。共有先アプリの起動に成功すると、共有先と操作時刻を履歴に記録します。この記録は、相手サービスでの受信・処理完了を保証するものではありません。共有先の起動に失敗した場合も、先に保存した本文や添付情報が残ることがあります。</p>
+<p>画像・ファイルを選択したときや他のアプリから受け取ったときは、内容をアプリ専用の内部保存領域（files/attachments）へコピーします。外部カメラアプリで撮影した写真も、この領域に保存します。共有しなかった添付のコピーが残る場合があります。写真やファイルを一括で自動収集する機能ではなく、ユーザーが選択・撮影・共有した内容を取り込みます。</p>
+</section>
+<section><h2>3. 外部AIアプリへの共有と画像メタデータ</h2>
+<p>ユーザーが共有を実行した場合、選択されたChatGPT、Gemini、ClaudeのAndroidアプリに、テキストや添付をAndroidの共有機能で渡します。添付には一時的な読み取り権限を付与します。共有先がインストールされているか、共有を扱えるかを端末上で確認します。</p>
+<p>添付画像はコピー時に再圧縮せず、EXIFなどのメタデータを削除しません。元の画像に撮影日時・位置情報等が含まれていれば、共有先に渡す画像にも残ることがあります。画像表示では向きの情報を参照します。</p>
+<p>共有後の受信データの利用、保存、削除等には、各サービス提供者のプライバシーポリシーや利用条件が適用されます。AI Hubは共有先サービスの保存期間や削除処理を管理しません。</p>
+</section>
+<section><h2>4. クリップボード</h2>
+<p>本文と画像のみの添付をGeminiまたはClaudeへ共有する場合、本文をAndroidのクリップボードへコピーし、ユーザーが共有先で貼り付けられるようにします。AI Hub独自の自動消去機能はありません。クリップボードの扱いはAndroidやキーボード等の機能・設定にも依存します。必要に応じて端末やキーボードのクリップボード履歴を削除してください。</p>
+</section>
+<section><h2>5. 広告と同意管理</h2>
+<p>AI HubはGoogle AdMob（Google Mobile Ads SDK）でバナー広告を表示します。Googleの公式説明では、このSDKは広告配信・分析・不正防止のため、IPアドレス（おおよその位置の推定に使用可能）、アプリ起動・タップ等の操作情報、性能等の診断情報、広告ID・アプリセットID・該当する端末上のアカウント関連識別子を収集・共有します。SDKが収集するデータはTLSで暗号化して送信されます。実際の処理は同意状態・広告設定・利用可能な識別子等によって異なります。AI Hubの本文や添付を広告リクエストへ設定する処理はありません。</p>
+<p>Google User Messaging Platform（UMP）を使って同意情報を更新し、必要な場合に同意フォームを表示します。SDKが広告要求可能と判定した場合に広告を要求します。必要と判定された場合は「広告プライバシー設定」から選択を見直せます。すべての地域・利用状況で同じフォームが表示されるわけではありません。Androidの設定では、対応する端末で広告IDのリセット・削除も行えます。</p>
+</section>
+<section><h2>6. サーバー通信とログ</h2>
+<p>AI Hub独自のサーバーへの本文・添付・履歴の送信、独自のAI API呼び出し、クラウド同期は実装していません。ただし、広告・同意管理SDK、外部AIサービスおよびブラウザで開くページは通信を行います。</p>
+<p>共有処理の調査のため、共有先、時刻、共有形式、添付件数、起動成否、例外の種類等を端末の診断ログへ記録します。本文・ファイル内容・生の添付URIをこのログへ出力する処理や、ログを独自サーバーへ送信する処理はありません。Firebase AnalyticsやCrashlyticsは導入していません。広告SDK自身の分析・診断処理とは異なります。</p>
+</section>
+<section><h2>7. 保存期間と削除方法</h2>
+<p>本文・添付コピー・共有履歴には、自動削除の期限を設けていません。保存データは、Androidの「設定」からAI Hubの「アプリ情報」→「ストレージ」等を開き、「ストレージを消去」または「データを消去」を実行するか、通常のアンインストールでアプリデータを削除するまで残ります。表示名や手順は端末によって異なります。</p>
+<p>アプリ内の入力クリアや添付の選択解除では、保存済み履歴や内部の添付コピーは削除されません。履歴の個別削除機能はありません。端末の診断ログの保存期間はOS等の管理によります。</p>
+<p>アプリデータの削除は、選択元の写真・ファイル、クリップボード、外部AIサービスやGoogleが保持するデータを削除する操作ではありません。第三者が保持するデータの保存期間・削除方法は、そのサービスの案内を確認してください。</p>
+</section>
+<section><h2>8. バックアップ</h2>
+<p>Android標準のアプリバックアップを無効にし、バックアップおよび端末移行ルールでも内部ファイル・データベース・設定等を除外しています。AI Hub独自のクラウドバックアップや復元機能はありません。</p>
+</section>
+<section><h2>9. 対象年齢</h2>
+<p>このポリシーはデータの取り扱いを説明するもので、特定の対象年齢や子ども向けアプリであることを宣言するものではありません。外部AIサービスの利用には、各サービスの年齢条件等が適用されます。</p>
+</section>
+<section><h2>10. 第三者サービスとこのWebページ</h2>
+<p>Googleの広告・同意管理サービスと、ユーザーが共有する外部AIサービスには、それぞれのポリシーが適用されます。関連リンクを以下に掲載します。</p>
+<p>このページはGitHub Pagesで公開しています。ページ独自の広告、アクセス解析、Cookie、JavaScriptは設置していません。ホスティング提供者であるGitHubは、サービス提供・セキュリティ等のためアクセス情報を処理する場合があります。</p>
+<ul><li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li><li><a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">Google Mobile Ads SDK data disclosure</a></li><li><a href="https://developers.google.com/admob/android/privacy">Google UMP</a></li><li><a href="https://openai.com/policies/privacy-policy/">OpenAI Privacy Policy</a></li><li><a href="https://privacy.claude.com/en/articles/10023548-privacy-policy">Anthropic Privacy Policy</a></li><li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a></li></ul>
+</section>
+<section><h2>11. 変更と問い合わせ</h2>
+<p>実装やサービスの変更等に応じて本ポリシーを更新し、このページに新しい内容と更新日を掲載します。</p>
+<p>運営者：hamsoft</p>
+<p>アプリ：AI Hub</p>
+<p>問い合わせ先：<a href="mailto:mamamadata@gmail.com">mamamadata@gmail.com</a></p>
+<p>施行日・最終更新日：2026年9月21日</p>
+</section>
+</main><footer>AI Hub · hamsoft</footer></body></html>
